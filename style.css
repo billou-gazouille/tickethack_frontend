@@ -4,8 +4,7 @@ body{
 }
 
 #landing-page{
-    /* margin-top: -3vh; */
-    background-image: url("./background.jpg");
+    background-image: url("./images/background.jpg");
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -15,13 +14,15 @@ body{
     display: flex;
     justify-content: space-between;
     /* border: solid red 5px; */
-    padding: 3vh;
+    padding: 2vh;
+    font-size: 1.8em;   
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #logo{
     /* border: solid orange 5px; */
     color: green;
-    /* padding: 3vh; */
 }
 
 #cartes-bookings{
@@ -30,13 +31,11 @@ body{
 
 #cartes{
     /* border: solid pink 5px; */
-    /* padding: 3vh; */
     padding-right: 5vh;
 }
 
 #bookings{
     /* border: solid pink 5px; */
-    /* padding: 3vh; */
 }
 
 
@@ -53,13 +52,16 @@ body{
 }
 
 #welcome-text{
-    /* width: 80vw;
-    height: 20vw; */
+    font-size: 1.2em;
     text-align: center;
     color: whitesmoke;
-    padding-top: 8vh;
+    padding-top: 6vh;
     padding-bottom: 8vh;
 }
+
+
+
+
 
 
 
@@ -67,43 +69,58 @@ body{
     display: flex;
     justify-content: space-between;
     width: 50vw;
-    /* position: relative;
-    left: 25vw;
-    padding-top: 10vh; */
 }
 
 #box-left, #box-right{
     width: 18vw;
-    height: 22vw;
-    background-color: whitesmoke;
-    border-radius: 15px;
+    height: 20vw;
+    background-color: white;
+    border-radius: 10px;   
+    padding: 10px;
 }
 
 #box-left{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 20px;
+}
+
+
+#departure{
+    margin-bottom: 5px;
 }
 
 
 #departure, #arrival, #date, #search{
-    height: 25px;
-    background-color: grey;
+    height: 5vh;
+}
+
+
+input, button{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
     border-radius: 5px;
-    padding: 5px;
-    /* font-size: large; */
 }
 
-#departure{
-    margin-bottom: 2px;
+input{
+    background-color: whitesmoke;
+    padding: 0px;
+    /* margin: 0px; */
 }
 
-#departure, #arrival{
-    text-align: left;
-}
- 
-#search{
+button{
+    color: white;
     background-color: #309e85;
     text-align: center;
 }
+
+
+
+#box-right{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
