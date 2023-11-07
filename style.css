@@ -4,7 +4,7 @@ body{
 }
 
 #landing-page{
-    margin-top: -3vh;
+    /* margin-top: -3vh; */
     background-image: url("./background.jpg");
     width: 100vw;
     height: 100vh;
@@ -41,39 +41,69 @@ body{
 
 
 
-#heading{
-    padding-top: 10vh;
-    /* border: solid green 5px; */
+
+
+
+
+#landing-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
-#sub-heading{
-    /* border: solid green 5px; */
-}
-
-#heading,#sub-heading{
+#welcome-text{
+    /* width: 80vw;
+    height: 20vw; */
     text-align: center;
     color: whitesmoke;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
 }
+
+
 
 #boxes-container{
     display: flex;
     justify-content: space-between;
     width: 50vw;
-    position: relative;
+    /* position: relative;
     left: 25vw;
-    padding-top: 10vh;
+    padding-top: 10vh; */
 }
 
 #box-left, #box-right{
-    width: 20vw;
-    height: 20vw;
+    width: 18vw;
+    height: 22vw;
+    background-color: whitesmoke;
+    border-radius: 15px;
 }
 
 #box-left{
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-#box-right{
-    background-color: rebeccapurple;
+
+#departure, #arrival, #date, #search{
+    height: 25px;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 5px;
+    /* font-size: large; */
 }
 
+#departure{
+    margin-bottom: 2px;
+}
+
+#departure, #arrival{
+    text-align: left;
+}
+ 
+#search{
+    background-color: #309e85;
+    text-align: center;
+}
