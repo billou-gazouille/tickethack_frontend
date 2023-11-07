@@ -1,33 +1,27 @@
-#container{
-    /* width: 100vw;
-    height: 100vh; */
-    margin: 0;
-    padding: 0;
-    
-    border: solid blue 5px;
-}
 
-#bg-img{
-    width: 100%;
-    height: 100%;
-    /* background-size: cover; */
+body{
+    margin: 0;
 }
 
 #landing-page{
+    margin-top: -3vh;
     background-image: url("./background.jpg");
     width: 100vw;
     height: 100vh;
-    background-size: cover
+    background-size: cover;
 }
 
 #header{
     display: flex;
     justify-content: space-between;
-    border: solid red 5px;
+    /* border: solid red 5px; */
+    padding: 3vh;
 }
 
 #logo{
-    border: solid orange 5px;
+    /* border: solid orange 5px; */
+    color: green;
+    /* padding: 3vh; */
 }
 
 #cartes-bookings{
@@ -35,18 +29,51 @@
 }
 
 #cartes{
-    border: solid pink 5px;
+    /* border: solid pink 5px; */
+    /* padding: 3vh; */
+    padding-right: 5vh;
 }
 
 #bookings{
-    border: solid pink 5px;
+    /* border: solid pink 5px; */
+    /* padding: 3vh; */
 }
 
+
+
 #heading{
-    margin-top: 30vh;
+    padding-top: 10vh;
+    /* border: solid green 5px; */
+}
+
+#sub-heading{
+    /* border: solid green 5px; */
 }
 
 #heading,#sub-heading{
     text-align: center;
     color: whitesmoke;
 }
+
+#boxes-container{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    position: relative;
+    left: 25vw;
+    padding-top: 10vh;
+}
+
+#box-left, #box-right{
+    width: 20vw;
+    height: 20vw;
+}
+
+#box-left{
+    background-color: aquamarine;
+}
+
+#box-right{
+    background-color: rebeccapurple;
+}
+
