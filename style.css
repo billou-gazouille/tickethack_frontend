@@ -1,0 +1,43 @@
+#container{
+    /* width: 100vw;
+    height: 100vh; */
+    margin: 0;
+    padding: 0;
+    
+    border: solid blue 5px;
+}
+
+#bg-img{
+    width: 100%;
+    height: 100%;
+    /* background-size: cover; */
+}
+
+#landing-page{
+    background-image: url("./background.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    border: solid red 5px;
+}
+
+#logo{
+    border: solid orange 5px;
+}
+
+#cartes-bookings{
+    display: flex;
+}
+
+#cartes{
+    border: solid pink 5px;
+}
+
+#bookings{
+    border: solid pink 5px;
+}
