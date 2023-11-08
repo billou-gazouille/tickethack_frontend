@@ -55,8 +55,8 @@ body{
     font-size: 1.2em;
     text-align: center;
     color: whitesmoke;
-    padding-top: 6vh;
-    padding-bottom: 8vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 
@@ -68,12 +68,12 @@ body{
 #boxes-container{
     display: flex;
     justify-content: space-between;
-    width: 50vw;
+    width: 55vw;
 }
 
 #box-left, #box-right{
-    width: 18vw;
-    height: 20vw;
+    width: 20vw;
+    height: 22vw;
     background-color: white;
     border-radius: 10px;   
     padding: 10px;
@@ -96,15 +96,22 @@ body{
 }
 
 
-input, button{
+input, #search-btn{
     width: 100%;
     height: 100%;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-radius: 5px;
+    border: none;
+}
+
+button{
+    border-radius: 5px;
+    border: none;
 }
 
 input{
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    background-color: rgb(235, 235, 235);
     padding: 0px;
     /* margin: 0px; */
 }
@@ -122,5 +129,31 @@ button{
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+}
+
+
+#results-container{
+    overflow-y: scroll;
+    height: 100%;
+    font-size: 1em;
+    width: 100%;
+}
+
+
+.result{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    height: 10%;
+    background-color: rgb(235, 235, 235);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.result-back-btn{
+    width: 20%;
+    height: 70%;
+    font-size: 1em;
 }
 

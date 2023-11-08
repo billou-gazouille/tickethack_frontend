@@ -30,21 +30,29 @@
                 <div id="box-left">
                     <div id="travel">
                         <div id="departure">
-                            <input type="input" placeholder="Departure">
+                            <input id="departure-input" type="input" placeholder="Departure">
                         </div>
                         <div id="arrival">
-                            <input type="input" placeholder="Arrival">
+                            <input id="arrival-input" type="input" placeholder="Arrival">
                         </div>
                     </div>
                     <div id="date">
-                        <input type="date" placeholder="Date">
+                        <input id="date-input" type="date" placeholder="Date">
                     </div>
                     <div id="search">
-                        <button>Search</button>
+                        <button id="search-btn">Search</button>
                     </div>
                 </div>
                 <div id="box-right">
-                    <img src="./images/train.png" width="70%" height="70%">
+                    <!-- <img src="./images/train.png" width="70%" height="70%"> -->
+                    <div id="results-container">
+                        <div class="result">
+                            <div class="result-trip">Paris > Lyon</div>
+                            <div class="result-time">21:46</div>
+                            <div class="result-price">91€</div>
+                            <button class="result-back-btn">Back</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
