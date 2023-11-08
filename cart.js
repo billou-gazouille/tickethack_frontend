@@ -2,6 +2,8 @@
 console.log('CART');
 const urlPrefix = 'http://localhost:3000/';
 
+const elementIdPairs = [];
+
 
 async function loadCart(){
     const url = `${urlPrefix}cart/trips`;
@@ -16,17 +18,32 @@ async function loadCart(){
 }
 
 
+async function RemoveTripFromCart(tripId){
+    const url = `${urlPrefix}cart`;
+    const response = await fetch(url, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({tripId: tripId})
+      });
+    const data = await response.json();
+    //console.log(data);
+}
+
+
+
 
 const cartPanel = document.getElementById('cart-panel');
 
 
 function addTripElement(trip){
-    const {departure, arrival, date, price} = trip;
+    console.log('AAA ', trip);
+    const {_id, departure, arrival, date, price} = trip;
     const timeHours = new Date(date).getHours();
     const timeMins = new Date(date).getMinutes();
 
     const tripElem = document.createElement('div');
     tripElem.classList.add('tripElem');
+    elementIdPairs.push({element: tripElem, _id: _id});
 
 
     const tripMovmentElem = document.createElement('div');
@@ -44,6 +61,11 @@ function addTripElement(trip){
     const deleteTripBtn = document.createElement('button');
     deleteTripBtn.classList.add('delete-trip-btn');
     deleteTripBtn.textContent = `X`;
+    deleteTripBtn.addEventListener('click', async function(){
+        const tripId = elementIdPairs.find(pair => pair.element === this.parentElement)._id;
+        await RemoveTripFromCart(tripId);
+        tripElem.remove();
+    });
 
     tripElem.appendChild(tripMovmentElem);
     tripElem.appendChild(tripTimeElem);
@@ -55,3 +77,7 @@ function addTripElement(trip){
 
 
 loadCart();
+
+document.getElementById('purchase-btn').addEventListener('click', function(){
+    // fetch a route which will send cart into booking
+});
