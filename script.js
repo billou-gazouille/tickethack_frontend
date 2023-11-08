@@ -11,6 +11,8 @@ const dateInput = document.getElementById('date-input');
 dateInput.value = '2023-11-07';
 const searchButton = document.getElementById('search-btn');
 
+const elementIdPairs = [];
+
 
 
 searchButton.addEventListener('click', async function(){
@@ -32,15 +34,52 @@ searchButton.addEventListener('click', async function(){
 
 
 function addTripResult(result){
-    const {departure, arrival, date, price} = result;
+    const {_id, departure, arrival, date, price} = result;
     const timeHours = new Date(date).getHours();
     const timeMins = new Date(date).getMinutes();
-    const resultItem = 
-    `<div class="result">
-        <div class="result-trip">${departure} > ${arrival}</div>
-        <div class="result-time">${timeHours}:${timeMins}</div>
-        <div class="result-price">${price}€</div>
-        <button class="result-back-btn">Back</button>
-    </div>`;
-    document.getElementById('results-container').innerHTML += resultItem;
+
+    console.log(_id);
+
+    const resultElem = document.createElement('div');
+    resultElem.classList.add('result');
+    elementIdPairs.push({element: resultElem, _id: _id});
+
+    const resultTripElem = document.createElement('div');
+    resultTripElem.classList.add('result-trip');
+    resultTripElem.textContent = `${departure} > ${arrival}`;
+
+    const resultTimeElem = document.createElement('div');
+    resultTimeElem.classList.add('result-time');
+    resultTimeElem.textContent = `${timeHours}:${timeMins}`;
+
+    const resultPriceElem = document.createElement('div');
+    resultPriceElem.classList.add('result-price');
+    resultPriceElem.textContent = `${price}€`;
+
+    const resultBookBtn = document.createElement('button');
+    resultBookBtn.textContent = `Book`;
+    resultBookBtn.addEventListener('click', function(){
+        const tripId = elementIdPairs.find(pair => pair.element === this.parentElement)._id;
+        console.log(tripId);
+        AddToCart(tripId);
+    });
+
+    resultElem.appendChild(resultTripElem);
+    resultElem.appendChild(resultTimeElem);
+    resultElem.appendChild(resultPriceElem);
+    resultElem.appendChild(resultBookBtn);
+    document.getElementById('results-container').appendChild(resultElem);
+}
+
+
+async function AddToCart(tripId){
+    const url = `${urlPrefix}cart/addTrip`;
+    const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({tripId: tripId})
+      });
+    const cart = await response.json();
+    //console.log(cart);
+    window.location.assign('./cart.html');
 }
